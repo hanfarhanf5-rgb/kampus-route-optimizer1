@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimasi Gedung Kampus</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="logo">🚀 Route Optimizer</div>
+            <h1>Optimasi Gedung Kampus</h1>
+            <p class="desc">
+                Simulasi HC, SA, GA untuk rute optimal.
+            </p>
+            <select id="algoSelect">
+                <option value="hc">Hill Climbing</option>
+                <option value="sa">Simulated Annealing</option>
+                <option value="ga">Genetic Algorithm</option>
+            </select>
+            <button id="runBtn">Jalankan Simulasi</button>
+            <button id="exportBtn">Download CSV</button>
+            <div class="card">
+                <h3>Status</h3>
+                <p id="stepText">Belum berjalan</p>
+            </div>
+            <div class="card">
+                <h3>Total Jarak</h3>
+                <p id="distanceText">0 meter</p>
+            </div>
+        </aside>
+        <main>
+            <div id="map"></div>
+            <div class="chart-card">
+                <h2>Grafik Progres</h2>
+                <canvas id="distanceChart"></canvas>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
