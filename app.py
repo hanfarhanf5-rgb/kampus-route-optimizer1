@@ -145,6 +145,10 @@ def export():
     si.close()
     return send_file(mem, mimetype="text/csv", as_attachment=True, download_name="hasil_simulasi.csv")
 
+import os
+print("Root dir:", os.listdir("."))
+print("Templates dir:", os.listdir("./templates"))
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
